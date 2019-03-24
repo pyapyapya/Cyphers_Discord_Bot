@@ -9,9 +9,8 @@ from Methods import random_pick
 from Methods import character_win_rate
 
 path = os.getcwd()
-f = open(path+'./token.txt')
+f = open('./token.txt')
 token = f.readline()
-print(token)
 f.close()
 
 client = discord.Client()
