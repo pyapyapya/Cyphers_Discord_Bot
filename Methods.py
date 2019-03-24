@@ -29,7 +29,6 @@ def find_profile(nickname):
 
 def find_ranking(nickname):
 
-    #req1 = requests.get('http://cyphers.nexon.com/cyphers/article/ranking/total/14/search/nickname/' + nickname + '/1')
     req2 = requests.get('http://cyphers.nexon.com/cyphers/game/record/search/1/' + nickname + '/1')
     html = req2.content
     soup = BeautifulSoup(html, 'lxml')
@@ -100,12 +99,6 @@ def character_item_ranking(nickname):
         resp = requests.post(url_json, data=data)
         resp_json = json.loads(resp.text)
         for idx, content in enumerate(resp_json['searchList']):
-            # tooltip = content['tooltip']
-            # tooltip = tooltip.replace('<br>', '\n')  # 개행해주려고 넣음
-            # soup_ = BeautifulSoup(tooltip, 'lxml')
-            # tooltip = soup_.text
-            # resp_json['searchList'][idx]['tooltip'] = tooltip
-
             eqPartsRate = content['eqPartsRate']
             eqPartsRate = int(eqPartsRate)
             itemName = content['itemName']

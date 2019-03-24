@@ -7,9 +7,6 @@ from Methods import character_item_ranking
 from Methods import random_pick
 from Methods import character_win_rate
 
-# Client: 536416036921278465
-# Token  : NTM2NDE2MDM2OTIxMjc4NDY1.DyWaTQ.IkpFQJE3EiO5GFr7Dv8cGWukyiM
-# bot_URL: https://discordapp.com/api/oauth2/authorize?client_id=536416036921278465&permissions=0&scope=bot
 f = open("C:/Users/Administrator/Desktop/프로그래밍/crwaling/token.txt", 'r')
 token = f.readline()
 f.close()
@@ -29,15 +26,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
     if __name__ == '__main__':
-        if message.content.startswith('!test'):
-            counter = 0
-            tmp = await client.send_message(message.channel, 'Calculating messages...')
-            async for log in client.logs_from(message.channel, limit=100):
-                if log.author == message.author:
-                    counter += 1
-            await client.edit_message(tmp, 'You have {} messages.'.format(counter))
-
-        elif message.content.startswith('!sleep'):
+        if message.content.startswith('!sleep'):
             await asyncio.sleep(5)
             await client.send_message(message.channel, 'Done sleeping')
 
