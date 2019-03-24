@@ -1,5 +1,6 @@
 import discord
 import asyncio
+import os
 from Methods import find_profile
 from Methods import find_ranking
 from Methods import ask_help
@@ -7,8 +8,10 @@ from Methods import character_item_ranking
 from Methods import random_pick
 from Methods import character_win_rate
 
-f = open("C:/Users/Administrator/Desktop/프로그래밍/crwaling/token.txt", 'r')
+path = os.getcwd()
+f = open(path+'./token.txt')
 token = f.readline()
+print(token)
 f.close()
 
 client = discord.Client()
